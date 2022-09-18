@@ -1,0 +1,325 @@
+<html>
+        <head>
+            <title>LIASMIC</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <div class="topnav">
+			<a class="active" href="#home">Home</a>
+			<a href="https://readyplayer.me/" target="_blank">Create your avatar</a>
+            <a href="https://www.verywellmind.com/what-is-art-therapy-2795755" target="_blank">Art Therapy</a>
+			<a href="https://www.vogue.in/wellness/content/verified-mental-health-helplines-and-services-pan-india-suicide-helplines-therapists-counsellors" target="_blank">Contacts</a>
+			<a href="https://www.portstluciehospitalinc.com/what-is-mental-health-awareness-and-why-does-it-matter/" target="_blank">Awareness</a>
+            <a href="https://www.medicalnewstoday.com/articles/154543" target="_blank">Mental Health</a>
+		    </div> 
+            <h1>LIASMIC</h1>
+  <div id="introduction">
+    <h2>Life Is A Sport Make It Count</h2>
+    <p> <h3><em>What do you understand by Mental Health? What are your ideas to bring mental Health Awareness?</em></h3>
+        <strong>Mental health in simple words means the well being of your mind. The mind is a complicated machine with emotions. To have control over our emotions taking care of mental health is important. Mental health can affect our daily behaviour. A healthy mind leads to a happy, peaceful and stress controlled life.
+        
+        My ideas to bring mental health awareness are to introduce people to the this concept by organising workshops and camps.
+        Most people are not aware that they have mental health issues and they continue to live in stress induced ,unhappy life.
+        They convince themselves that what we are going through is part and parcel of life, however they do not realise there are ways to control it and how having mental health issues affects you entire internal system in the long run.
+        I feel mental health awareness must be introduced to people at a young age. The amount of competition is tremendously increasing , youngsters are burnt out when they come back from school.
+        Inculcating knowledge and practice of good ways to have mental health in control must start at a young age for a better future.</strong></p>
+        <p> <em> DEPRESSION AND ART</em>
+            Vincent van Gogh cut off his left ear when tempers flared with Paul Gauguin, the artist with whom he had been working for a while in Arles. Van Gogh's illness revealed itself: he began to hallucinate and suffered attacks in which he lost consciousness. During one of these attacks, he used the knife.</p>
+        <h4>CHATBOT
+            <html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+	<!--  -->
+
+	<style>
+		.title {
+			background-color: #3144c4;
+			color: #f8fafc;
+			text-align: center;
+			padding: 100px;
+			-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+			
+			
+		}
+		
+		.letsSpeak {
+			background-color: #ffffff;
+			color: white;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+		
+		.knowledge {
+			background-color: #004e64;
+			color: white;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+		
+		.teach {
+			background-color: #16a8c7;
+			color: white;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+		
+		a {
+			color: rgb(255, 255, 255);
+			
+		}
+		button {
+			background-color: #3144c4;
+		}
+	</style>
+
+</head>
+
+<body>
+	
+	<div class="title" id="title">
+	<h2>Hi there, I'm a chat bot :)
+	</div>
+
+
+	<div class="knowledge">
+		<h2>Chat with me!</h2>
+
+		<input type="text" class="form-control" placeholder="Talk to me..." id="userInput">
+		<br/>
+		<button type="button" class="btn btn-danger" id="send" onclick="whatSaid()" value="Reset Form">Chat</button>
+		<br/>
+		<div class="response" id="botRespo"></div>
+	</div>
+
+
+
+	<div class="teach">
+		<h2>Teach me things!</h2>
+		<input type="text" class="form-control" placeholder="When you say..." id="helpLearn">
+		<input type="text" class="form-control" placeholder="How should I respond?" id="aboutIt">
+		<br/>
+		<button type="button" class="btn btn-danger" id="send" onclick="teachMe()">Teach me!</button>
+		<br/>
+		<div id="learnlog"></div>
+
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.3.0/annyang.min.js"></script>
+
+	<script>
+		function init() {
+			savedValue = localStorage.getItem('facts');
+
+		}
+
+		var commands = {
+			'show me *tag': showFlickr,
+
+			'calculate :month stats': calculateStats,
+
+			'say hello (to my little) friend': greeting
+		};
+
+		var showFlickr = function (tag) {
+			var url = 'http://api.flickr.com/services/rest/?tags=' + tag;
+			$.getJSON(url);
+
+		}
+
+		var calculateStats = function (month) {
+			$('#stats').text('Statistics for ' + month);
+		}
+
+		var greeting = function () {
+			$('#greeting').text('Hello!');
+		}
+
+
+		if (annyang) {
+			var commands = {
+				'Hello there': function () {
+					var content = ' '
+					content += '<br/>'
+					content += 'Hi, how are you??'
+					content += '<br/>'
+					content += 'I\'m a young bot called Larry.'
+					content += '<br/>'
+					content += 'Unfortunately, my ears aren\'t great (yet), so until I learn more this is all I can hear/say.'
+					content += '<br/>'
+					content += 'But, you can type in the boxes below to chat with me more!';
+
+					console.log(commands);
+					document.getElementById('output').innerHTML = content;
+
+				}
+			}
+
+		};
+
+		annyang.addCommands(commands);
+
+
+	</script>
+
+
+
+
+	<script>
+		function gettingJSON() {
+			document.write("jquery loaded");
+			$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London&APPID=ee6596241130f193adf1ba90e625cc10", function (json) {
+				document.write(JSON.stringify(json));
+			});
+		}
+
+		$(document).keypress(function (e) {
+			if (e.which == 13) {
+				whatSaid();
+
+			}
+		});
+
+		var now = new Date();
+
+		//this is what the bot knows
+		var vocabulary = [
+['hi', 'hello'],
+['what is your name', 'My name is TEAN and Im your friend :)'],
+['how are you', 'Im great, How are you'],
+['where are you', 'Boulder, Colorado'],
+['where is that', 'Near the Rocky Mountains in the United States'],
+['where am i', 'you\'re also in Boulder'],
+['who created you', 'You did!'],
+['what is a bot', 'I\m a bot'],
+['what is your favorite movie', 'Harry Potter perhaps?'],
+['what day is it', now],
+['where am i from', 'Madison Wisconsin'],
+['i love you', 'Aw, thanks. I love you too!'],
+['who is the coolest dog', 'Nora of course!'],
+['would you like to go mountain bicycling', 'I\'m a computer silly'],
+
+
+];
+
+
+
+
+		function whatSaid() {
+
+
+
+			//this creates a variable input that is the userInput
+			var input = document.getElementById('userInput');
+
+			//this defines a variable userSaid (which is what the user said) //that gets the value of the Input variable
+			var userInput = input.value;
+
+
+			//this strips the punctuation and the spaces from user input
+			//punctuation marks I want to strip    
+			var punctRE = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g;
+			//fixes the spaces after I remove a bunch of punctuation
+			var spaceRE = /\s+/g;
+
+			var str = userInput;
+			//use string replace to strip the text
+			var saidStripped = str.replace(punctRE, '').replace(spaceRE, ' ');
+			//convert to lower case
+			var input = saidStripped.toLowerCase()
+
+
+
+			var notUnderstood = "I'm sorry, I don\'t understand";
+
+
+			for (var i = 0; i < vocabulary.length; i++) {
+				console.log('I am comparing ' + vocabulary[i][0] + ' with ' + input);
+				if (vocabulary[i][0] == input) {
+					var respo = vocabulary[i][1];
+					document.getElementById('botRespo').innerHTML = respo;
+					return;
+					console.log(vocabulary[i][1]);
+
+				} else {
+					document.getElementById('botRespo').innerHTML = notUnderstood;
+				}
+			}
+
+			//clears the textbox
+			//document.getElementById('userInput').reset;
+		}
+
+		//try to write this to local storage
+		//add a teach me bar
+		//this is a function that takes input 
+		function teachMe() {
+
+			var input1 = document.getElementById('helpLearn');
+			var input2 = document.getElementById('aboutIt');
+
+			var learn_input = input1.value
+			console.log(learn_input);
+			//strip punctuation and spaces
+			//learn_input becomes learnStripped
+
+			var punctuateRE = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g;
+			var space_RE = /\s+/g;
+			var str2 = learn_input;
+			var learnStripped = str2.replace(punctuateRE, '').replace(space_RE, ' ');
+			var learned = learnStripped.toLowerCase()
+
+
+
+			var about_input = input2.value
+			console.log(about_input);
+
+			document.getElementById('learnlog').innerHTML = learn_input + ', ' + about_input
+
+			var learnArr = [learnStripped, about_input];
+			console.log(learnArr);
+
+			vocabulary.push(learnArr);
+			console.log(vocabulary);
+
+
+
+			//var learnArrString = learnArr.toString();
+			//console.log(learnArrString);
+
+			var vocabString = vocabulary.toString();
+			console.log(vocabString);
+			//first, need to stringify my array before saving it to local storage
+
+			localStorage.setItem('facts', vocabString);
+
+
+		}
+
+		init();
+	</script>
+
+</body>
+        </h4>
+            <a href="https://images.app.goo.gl/g4wuRdyA89BGpGRa9" target="_blank"><img src="https://images.app.goo.gl/g4wuRdyA89BGpGRa9"/></a>      
+            <video src="https://www.pexels.com/video/a-teenage-boy-undergoing-counselling-4100356/" height="240" width="320" controls>Video not supported</video>
+        </body>
+</html>
